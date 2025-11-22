@@ -52,7 +52,7 @@ function App() {
       <main className="max-w-6xl mx-auto px-6 py-12">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-slate-800 mb-6 leading-tight">
-            흩어진 링크들을<br />한 곳에 모아보세요
+            🌌 OpenLink Project: 디지털 탐험의 새로운 지평을 열다
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
             매일 수많은 웹사이트를 방문하지만, 나중에 다시 찾기는 어렵죠.
