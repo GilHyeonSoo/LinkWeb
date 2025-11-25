@@ -2,7 +2,7 @@ import { ExternalLink, Sparkles, Compass, Zap, Globe, Palette } from 'lucide-rea
 
 function App() {
   // 여기에 원하는 URL을 설정하세요
-  const targetURL = 'http://localhost:3000/';
+  const targetURL = 'https://openlink.world/';
 
   const handleNavigate = () => {
     window.open(targetURL, '_blank');
