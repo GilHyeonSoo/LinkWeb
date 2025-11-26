@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // 1. 빌드된 index.html 템플릿 로드
-const templatePath = path.resolve(__dirname, 'dist', 'client', 'index.html');
+const templatePath = path.resolve(__dirname, 'dist', 'index.html');  // ⬅️ client 제거
 const template = await fs.readFile(templatePath, 'utf-8');
 
 // 2. 서버 번들(SSR 모듈) 로드
@@ -15,12 +15,13 @@ const ssrManifestPath = path.resolve(__dirname, 'dist', 'server', 'entry-server.
 const { render } = await import(ssrManifestPath); 
 
 // 3. 렌더링 실행
-// ✅ 수정: 이제 render()는 순수 문자열을 반환하므로 바로 변수에 저장합니다.
 const appHtml = render(); 
 
-// 4. HTML 템플릿에 삽입 및 저장
-// ✅ 수정: index.html에 넣어둔 '' 주석을 찾아 실제 내용으로 바꿉니다.
-const html = template.replace('', appHtml);
+// 4. HTML 템플릿에 삽입
+const html = template.replace(
+  '<div id="root"></div>',
+  `<div id="root">${appHtml}</div>`
+);
 
 // 5. 최종 HTML 파일을 dist/index.html로 저장
 const finalPath = path.resolve(__dirname, 'dist', 'index.html');

@@ -23,7 +23,7 @@ function App() {
             </div>
             <div>
               <h1 className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-purple-300 via-pink-300 to-purple-400 bg-clip-text text-transparent tracking-tight">
-                오픈링크
+                링크모아
               </h1>
             </div>
           </div>
